@@ -1,0 +1,11 @@
+<script>
+document.addEventListener("click", function(e) {
+  const target = e.target.closest('a[href$="cookie-settings"]');
+  if (target) {
+    e.preventDefault();
+    if (window.klaro) {
+      klaro.show();
+    }
+  }
+});
+</script>

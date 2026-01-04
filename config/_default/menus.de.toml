@@ -56,6 +56,18 @@
   weight = 40
 
 [[main]]
+  name = "Shootings"
+  parent = "Fotografie"
+  pageRef = "shootings"
+  weight = 10
+
+[[main]]
+  name = "Gallerie"
+  parent = "Fotografie"
+  pageRef = "gallerie"
+  weight = 20
+
+[[main]]
   name = "Blog"
   pageRef = "blog"
   weight = 50
@@ -65,44 +77,9 @@
   pageRef = "about"
   weight = 60
 
-#[[main]]
-#  name = "example sub-menu 1"
-#  parent = "Parent"
-#  pageRef = "posts"
-#  weight = 20
-
-#[[main]]
-#  name = "example sub-menu 2"
-#  parent = "Parent"
-#  pageRef = "posts"
-#  weight = 20
-
-#[[subnavigation]]
-#  name = "An interesting topic"
-#  pageRef = "tags/interesting-topic"
-#  weight = 10
-
-#[[subnavigation]]
-#  name = "My Awesome Category"
-#  pre = "github"
-#  pageRef = "categories/awesome"
-#  weight = 20
-
-#[[main]]
-#  name = "Categories"
-#  pageRef = "categories"
-#  weight = 20
-
-#[[main]]
-#  name = "Tags"
-#  pageRef = "tags"
-#  weight = 30
-
-
 # -- Footer Menu --
 # The footer menu is displayed at the bottom of the page, just before
 # the copyright notice. Configure as per the main menu above.
-
 
 [[footer]]
    name = "Impressum"
@@ -113,3 +90,8 @@
   name = "Datenschutz"
   pageRef = "datenschutz"
   weight = 20
+
+[[footer]]
+  name = "Cookie Einstellungen"
+  url = "/#cookie-settings"
+  weight = 30
