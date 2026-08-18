@@ -1,6 +1,6 @@
 disabled = false
-languageCode = "de"
-languageName = "Deutsch"
+label = "Deutsch"
+locale = "de-DE"
 weight = 1
 title = "Der Witzer"
 
