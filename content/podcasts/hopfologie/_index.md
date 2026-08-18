@@ -1,6 +1,0 @@
-+++
-
-Layout = "simple"
-
-+++
-# Hopfologie

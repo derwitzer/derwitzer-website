@@ -15,30 +15,6 @@
   pageRef = "podcasts"
   weight = 10
 
-[[main]]
-  name = "Hopfologie"
-  parent = "Podcast"
-  pageRef = "podcasts/hopfologie"
-  weight = 10
-
-[[main]]
-  name = "Nerdklärt"
-  parent = "Podcast"
-  pageRef = "podcasts/nerdklaert"
-  weight = 20
-
-[[main]]
-  name = "Gach und Guad"
-  parent = "Podcast"
-  pageRef = "podcasts/gachundguad"
-  weight = 30
-
-[[main]]
-  name = "Gabelbissen"
-  parent = "Podcast"
-  pageRef = "podcasts/gabelbissen"
-  weight = 40
-
 
 [[main]]
   name = "Bier Sommelier"
@@ -51,21 +27,9 @@
   weight = 30
 
 [[main]]
-  name = "Fotografie"
-  pageRef = "fotografie"
+  name = "Content Creator"
+  pageRef = "cc"
   weight = 40
-
-[[main]]
-  name = "Shootings"
-  parent = "Fotografie"
-  pageRef = "shootings"
-  weight = 10
-
-[[main]]
-  name = "Gallerie"
-  parent = "Fotografie"
-  pageRef = "gallerie"
-  weight = 20
 
 [[main]]
   name = "Blog"
