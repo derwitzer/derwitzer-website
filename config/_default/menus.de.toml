@@ -23,7 +23,7 @@
 
 [[main]]
   name = "Coder"
-  pageRef = "coding"
+  pageRef = "coder"
   weight = 30
 
 [[main]]

@@ -7,18 +7,23 @@ layout = "simple"
 Angefangen als reiner Konsument, damals als es nur das iTunes Podcast-Verzeichnis gab.
 {{< /lead >}}
 
-Durch eine Einladung von **Sven Mencke** zum *Culinaricast* habe ich ein wenig in die aktive Welt geschnuppert und schließlich mit Sven als Mentor mein eigenes Projekt gelauncht: den **Gabelbissen**.
+Durch eine Einladung von **Sven Mencke** zum *Culinaricast* habe ich ein wenig in die aktive Welt hineingeschnuppert und schließlich mit Sven als Mentor mein eigenes Projekt gelauncht: den **Gabelbissen**.
 
 ---
 
 ## Aktive Projekte
 
 ## Hopfologie {{< badge >}}seit 2019{{< /badge >}}
+<div class="flex flex-col md:flex-row items-center gap-6 mb-6">
+<div class="shrink-0 mb-[10px] md:mb-0 md:mr-[10px]">
+{{< figure src="/images/podcast/hopfologie.jpg" alt="Illustration: Logo Hopfologie" class="rounded-lg" figureClass="w-32 md:w-40" >}}
+</div>
 
-Dieses Projekt war der Initiator der **Hopfologie – Österreichs bierigster Podcast**. Das Projekt ging 2019 online und erfreut sich in der Bierszene großer Beliebtheit. Gemeinsam mit Peter verkosten wir Biere oder führen Gespräche mit Dritten. 🍺
+Mein ehemaliger Podcast Sprechgröstl war der Initiator der **Hopfologie – Österreichs bierigster Podcast**. Angefangen mit der Idee "Craftbiere verkosten kann jeder, wir verkosten nur das billigste Bier im Supermarkt" ist aus ein paar Spaßfolgen ein ernstes Projekt geworden. Peter und mir war es von Anfang an wichtig, dass wir den Leuten mit unseren Episoden zeigen, wie unterschiedlich Bier schmecken kann. Es muss nicht immer wie das "Standard Helle" schmecken, sondern kann auch herrlich fruchtig sein, ohne je eine Frucht oder künstliche Aromen gesehen zu haben. Es kann an wunderbare Schokoladedesserts erinnern, es kann hopfig bitter, oder sauer oder brotig oder ...
+</div>
 
 {{< alert >}}
-Unser Ziel ist es zu zeigen, wie vielfältig das Thema Bier sein kann.
+Wir lieben Vielfalt im Glas – aber immer mit Verstand. Alkohol gehört nicht in die Hände von Kindern und Jugendlichen. Pass auf dich auf und trinke mit Bedacht.
 {{< /alert >}}
 
 ---
@@ -26,17 +31,34 @@ Unser Ziel ist es zu zeigen, wie vielfältig das Thema Bier sein kann.
 ## Eingestellte Projekte
 
 ## Gabelbissen {{< badge >}}2012 – 2020{{< /badge >}}
+<div class="flex flex-col md:flex-row items-center gap-6 mb-6">
 
-Der Gabelbissen Podcast begleitete mich von 2012 bis 2020. Dieser Podcast widmet sich voll und ganz der **Kulinarik Österreichs** und begeisterte viele Menschen. Durch diesen Podcast habe ich auch meinen heutigen Co-Host und guten Freund **Peter** kennengelernt.
+Der Gabelbissen Podcast begleitete mich von 2012 bis 2020. Dieser Podcast widmet sich voll und ganz der **Kulinarik Österreichs** und begeisterte viele Menschen. Durch diesen Podcast habe ich auch meinen heutigen Co-Host und guten Freund **Peter** kennengelernt. Pro Folge habe ich ein typisches Gericht aus Österreich genauer betrachtet. Ich habe über die Geschichte berichtet, bin auf spezielle Zutaten eingegangen und habe natürlich erklärt, wie man das entsprechende Gericht zubereiten kann. Ich habe immer versucht, möglichst originalgetreue Rezepte zu verwenden, die jedoch einfach zuzubereiten sind, damit auch wirklich jede Person es nachkochen kann.
+
+<div class="shrink-0 mt-[10px] md:mt-0 md:ml-[10px]">
+{{< figure src="/images/podcast/gabelbissen.jpg" alt="Illustration: Logo Gabelbissen" class="rounded-lg" figureClass="w-32 md:w-40" >}}
+</div>
+</div>
 
 ## Sprechgröstl {{< badge >}}2019 - 2020{{< /badge >}}
 
-Kurzzeitig gab es auch den Podcast Sprechgröstl, den ich parallel zum Gabelbissen betrieben habe. Dieser war ein Personal-Podcast, bei dem ich aus meinem persönlichen Leben berichtet habe – später auch mit einigen Interviews sowie den ersten Bierverkostungen mit Peter.
+Kurzzeitig gab es auch den Podcast Sprechgröstl, den ich parallel zum Gabelbissen betrieben habe. Dieser entstand zur Hochblüte der "Laberpodcasts" oder "Personal Podcasts". Damit wollte ich ein wenig aus meinem Alltag berichten, aber ich habe auch einige Interviewfolgen aufgenommen. Es ging unter anderem um Themen wie Yoga, Pen & Paper, ... und es war quasi die Vorlage für das heutige Projekt Hopfologie.
 
 ## Nerdklärt {{< badge >}}2019 - 2021{{< /badge >}}
+<div class="flex flex-col md:flex-row items-center gap-6 mb-6">
+<div class="shrink-0 mt-[10px] md:mt-0 md:mr-[10px]">
+{{< figure src="/images/podcast/nerdklaert.jpg" alt="Illustration: Logo Nerdklaert" class="rounded-lg" figureClass="w-32 md:w-40" >}}
+</div>
 
-Ein Podcast mit High-Level-Erklärungen zu diversen IT-Themen. Wie funktioniert ein VPN? Was ist Linux? ... musste aus Zeitgründen eingestellt werden.
+Während eines Podcast-Events in Wien haben sich einige andere Podcaster, die etwas mit Bier und Technik zu tun hatten, unterhalten und sich lustig über andere Teilnehmer gemacht, die in diversen Dingen nicht so technisch versiert waren. Dem wollte ich etwas entgegenwirken und hatte die Idee, einen Podcast zu machen, der sehr einfach, aber verständlich ganz typische Begriffe aus der IT erklärt. Zum Beispiel: Wie funktioniert ein VPN und was ist das überhaupt? Was ist eigentlich Linux? Wie unterscheidet sich ein Mac von einem PC? Ein Format, das sich großer Beliebtheit erfreut hat, aber aus Zeitmangel eingestellt wurde.
+</div>
 
-## Gach und Guad {{< badge >}}2019 - 2022   {{< /badge >}}
+## Gach und Guad {{< badge >}}2019 - 2022{{< /badge >}}
 
-Beschäftigte sich mit schnellen Rezepten, die man auch trotz Vollzeitjob zu Hause zubereiten kann. Ebenfalls aus Zeitgründen eingestellt.
+<div class="flex flex-col md:flex-row items-center gap-6 mb-6">
+Peter und ich arbeiten Vollzeit, haben Familie und kochen gerne. Uns hat der Trend, nicht mehr selbst zu kochen, nie gefallen, da Fertiggerichte meist zu fett, zu salzig, ... waren. So haben wir uns beide die Frage gestellt: Kann man nicht selbst gute und auch gesunde Gerichte innerhalb von 20 Minuten kochen? Genau dies wurde zum Aufhänger des Projekts. Folge für Folge haben wir uns einem Thema gewidmet. Teilweise haben wir uns auf saisonale Zutaten konzentriert, dann haben wir uns mit Österreichs Nachbarländern beschäftigt und noch so einiges mehr. Zugegeben, es war nicht immer so gesund, aber immer wesentlich gesünder als jedes fertige Produkt aus dem (Tief-)Kühlregal. Aus Zeitmangel musste auch dieses Projekt eingestellt werden.
+
+<div class="shrink-0 mt-[10px] md:mt-0 md:ml-[10px]">
+{{< figure src="/images/podcast/gachundguad.jpg" alt="Illustration: Logo Gach und Guad" class="rounded-lg" figureClass="w-32 md:w-40" >}}
+</div>
+</div>
