@@ -64,7 +64,7 @@ Alle Seiten sind Abschnitts-Seiten (`_index.md`) mit dem Layout `simple`. Einzel
 | `content/impressum/` | Impressum (Footer) | nur Überschrift | Platzhalter |
 | `content/datenschutz/` | Datenschutz (Footer) | ca. 4.500 Wörter | vollständig, Stand 4. Januar 2026, erstellt mit datenschutz-generator.de |
 
-Die Seiten Podcast und Coding nutzen die Blowfish-Shortcodes `lead`, `badge`, `figure` und `alert` sowie eingebettetes HTML für das Bild-Text-Layout. Das funktioniert, weil in `markup.toml` `unsafe = true` gesetzt ist. Die Coding-Seite verwendet dafür die eigene Klasse `media-row` (siehe [Eigenes CSS](#eigenes-css)), die Podcast-Seite noch Tailwind-Klassen direkt im HTML.
+Die Seiten Podcast und Coding nutzen die Blowfish-Shortcodes `lead`, `badge`, `figure` und `alert` sowie eingebettetes HTML für das Bild-Text-Layout. Das funktioniert, weil in `markup.toml` `unsafe = true` gesetzt ist. Beide Seiten verwenden dafür die eigene Klasse `media-row` (siehe [Eigenes CSS](#eigenes-css)).
 
 ## Eigenes CSS
 
@@ -89,9 +89,10 @@ Dabei gilt:
 
 - Zwischen Shortcode und Text muss eine Leerzeile stehen, sonst landet das Bild im Absatz.
 - Mehrere Absätze kommen in ein eigenes `<div>` (mit Leerzeile nach `<div>` und vor `</div>`), damit sie eine gemeinsame Spalte bilden. Ein Beispiel steht im Abschnitt „Aktuelle Projekte“ der Coding-Seite.
+- Auch nach dem öffnenden `<div class="media-row">` braucht ein direkt folgender Text eine Leerzeile, sonst wird er nicht als Markdown-Absatz gerendert.
 - Überschriften mit Shortcode bekommen eine feste Anker-ID (`{#anker}`), weil Hugo sonst den Shortcode-Platzhalter in die ID schreibt.
 
-**Badges in Überschriften** stehen durch eine zweite Regel neben dem Überschriftentext statt in einer eigenen Zeile. Die Regel gilt für alle Seiten, also auch für die Podcast-Seite.
+**Badges in Überschriften** stehen durch eine zweite Regel neben dem Überschriftentext statt in einer eigenen Zeile. Die Regel gilt für alle Seiten.
 
 ## Konfiguration
 
@@ -180,7 +181,30 @@ Ursachen:
 
 Der Text der Seite ist unverändert. Geprüft wurde das erzeugte HTML und das CSS-Bundle; eine Sichtprüfung im Browser steht noch aus.
 
-Auswirkung auf andere Seiten: Die Badge-Regel wirkt auch auf der Podcast-Seite. Deren Bild-Text-Layout und Anker-IDs sind unverändert.
+Auswirkung auf andere Seiten: Die Badge-Regel wirkt auch auf der Podcast-Seite.
+
+### 1. Oktober 2026: Abstände auf der Podcast-Seite
+
+Ausgangslage: Zwischen Bild und Text fehlte der Abstand. Sichtbar war das nur bei links stehenden Bildern (Hopfologie, Nerdklärt), weil der linksbündige Text dort direkt an der Bildkante beginnt; bei rechts stehenden Bildern verdeckte der Flattersatz den Fehler. Außerdem waren die Logos unterschiedlich groß (300 bzw. 384 px).
+
+Ursachen:
+
+- Die Klassen `gap-6`, `mb-[10px]`, `mt-[10px]`, `md:mb-0`, `md:mr-[10px]` und `md:ml-[10px]` fehlen im CSS des Themes.
+- Der Parameter `figureClass` wird vom `figure`-Shortcode ignoriert, die Logos erschienen in Originalgröße.
+- Im Abschnitt „Gach und Guad“ fehlte die Leerzeile nach dem öffnenden `<div>`, der Text wurde nicht als Absatz gerendert.
+
+Änderungen:
+
+| Datei | Änderung |
+| --- | --- |
+| `content/podcasts/_index.md` | Wrapper-Klassen in vier Abschnitten durch `media-row` ersetzt |
+| `content/podcasts/_index.md` | innere `<div class="shrink-0 …">` um die Bilder entfernt |
+| `content/podcasts/_index.md` | wirkungslose Parameter `figureClass` und `class="rounded-lg"` entfernt |
+| `content/podcasts/_index.md` | „Gach und Guad“: Leerzeile nach dem öffnenden `<div>` ergänzt |
+| `content/podcasts/_index.md` | feste Anker-IDs: `#hopfologie`, `#gabelbissen`, `#sprechgroestl`, `#nerdklaert`, `#gach-und-guad` |
+| `DOKUMENTATION.md` | Abschnitte „Inhalte“, „Eigenes CSS“ und „Auffälligkeiten“ angepasst, dieser Eintrag ergänzt |
+
+Der Text der Seite ist unverändert, `assets/css/custom.css` ebenfalls. Sichtbare Folge: Der Abstand zwischen Bild und Text beträgt jetzt 1,5 rem, und alle Logos sind einheitlich 10 rem (160 px) breit, mobil 8 rem – also kleiner als zuvor. Geprüft wurde das erzeugte HTML; eine Sichtprüfung im Browser steht noch aus.
 
 ## Auffälligkeiten
 
@@ -195,18 +219,16 @@ Auswirkung auf andere Seiten: Die Badge-Regel wirkt auch auf der Podcast-Seite. 
 2. **Link zur Datenschutzerklärung im Klaro-Dialog ist relativ.** `privacyPolicyUrl: 'datenschutz'` führt auf Unterseiten zu `/podcasts/datenschutz` und damit ins Leere. Richtig wäre `/datenschutz/`.
 3. **Hugo-Version und Theme passen nicht zusammen.** Blowfish v2.95.0 unterstützt Hugo 0.141.0 bis 0.154.0, installiert ist 0.167.0. Der Build läuft durch, meldet aber eine Kompatibilitätswarnung und die veraltete Verwendung von `.Site.LanguageCode`. Ein Theme-Update über das Submodul behebt das voraussichtlich.
 
-4. **Podcast-Seite nutzt Klassen, die es nicht gibt.** `gap-6`, `mb-[10px]`, `md:mr-[10px]`, `md:ml-[10px]` und der Parameter `figureClass` haben dort keine Wirkung, und die Anker-IDs enthalten Shortcode-Platzhalter. Es fällt weniger auf, weil die Logos klein sind. Die Seite lässt sich wie die Coding-Seite auf `media-row` umstellen.
-
 ### Inhaltlich
 
-5. **Impressum ist leer.** Die Seite ist im Footer verlinkt, enthält aber nur die Überschrift. Für eine öffentlich erreichbare österreichische Website besteht eine Offenlegungspflicht (§ 25 MedienG, ggf. § 5 ECG).
-6. **Leere Menüpunkte.** Blog und Bier sind im Hauptmenü verlinkt, haben aber keinen Inhalt; "Über mich" besteht aus einem Satz.
-7. **Uneinheitliche Benennung.** Menüeintrag "Coder", Seitentitel "Coding", Pfad `/coder/`. Der Ordner `gallerie` weicht von der deutschen Schreibweise "Galerie" ab und landet so in der URL.
-8. **Front Matter uneinheitlich.** Fünf Seiten haben keinen `title` und schreiben `Layout` groß, zwei Seiten haben `title` und `layout`. Hugo behandelt beides gleich, aber ohne `title` fehlt der Seitentitel im Browser-Tab und in Suchergebnissen.
+4. **Impressum ist leer.** Die Seite ist im Footer verlinkt, enthält aber nur die Überschrift. Für eine öffentlich erreichbare österreichische Website besteht eine Offenlegungspflicht (§ 25 MedienG, ggf. § 5 ECG).
+5. **Leere Menüpunkte.** Blog und Bier sind im Hauptmenü verlinkt, haben aber keinen Inhalt; "Über mich" besteht aus einem Satz.
+6. **Uneinheitliche Benennung.** Menüeintrag "Coder", Seitentitel "Coding", Pfad `/coder/`. Der Ordner `gallerie` weicht von der deutschen Schreibweise "Galerie" ab und landet so in der URL.
+7. **Front Matter uneinheitlich.** Fünf Seiten haben keinen `title` und schreiben `Layout` groß, zwei Seiten haben `title` und `layout`. Hugo behandelt beides gleich, aber ohne `title` fehlt der Seitentitel im Browser-Tab und in Suchergebnissen.
 
 ### Aufräumen
 
-9. **`.DS_Store` und `.hugo_build.lock` sind eingecheckt.** Sechs `.DS_Store`-Dateien und die Lock-Datei gehören in die `.gitignore` und aus dem Index entfernt.
-10. **Veraltete Build-Ausgabe.** `public/` enthält noch `coding/` und `fotografie/` aus der Struktur vor dem Umbau. Das Verzeichnis ist ignoriert; wer es direkt hochlädt, veröffentlicht die alten Seiten mit. `hugo --cleanDestinationDir` räumt auf.
-11. **Bilder der Coding-Seite sind überdimensioniert.** Die PNGs sind 1.400 bis 1.920 px breit und werden mit 128 bis 160 px angezeigt. Da sie in `static/` liegen, verkleinert Hugo sie nicht.
-12. **Leere Dateien.** `config/_default/module.toml` und `.vscode/settings.json` haben keinen wirksamen Inhalt.
+8. **`.DS_Store` und `.hugo_build.lock` sind eingecheckt.** Sechs `.DS_Store`-Dateien und die Lock-Datei gehören in die `.gitignore` und aus dem Index entfernt.
+9. **Veraltete Build-Ausgabe.** `public/` enthält noch `coding/` und `fotografie/` aus der Struktur vor dem Umbau. Das Verzeichnis ist ignoriert; wer es direkt hochlädt, veröffentlicht die alten Seiten mit. `hugo --cleanDestinationDir` räumt auf.
+10. **Bilder der Coding-Seite sind überdimensioniert.** Die PNGs sind 1.400 bis 1.920 px breit und werden mit 128 bis 160 px angezeigt. Da sie in `static/` liegen, verkleinert Hugo sie nicht.
+11. **Leere Dateien.** `config/_default/module.toml` und `.vscode/settings.json` haben keinen wirksamen Inhalt.
